@@ -1,0 +1,46 @@
+.mat-raised-button img {
+  // max-height: 3em !important;
+  // max-width: 3em !important;
+  width: 12em;
+}
+
+.mat-raised-button {
+  // max-height: 3em !important;
+  // max-width: 3em !important;
+  margin: 1em;
+  height: 7em;
+}
+
+.mb-title {
+  margin-bottom: 30px !important;
+}
+
+.payment-methods-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1em;
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+  button {
+    &.selected {
+      background: #00000030;
+    }
+  }
+
+  .loading-shine {
+    width: 14.5em;
+    height: 7em;
+    margin: 0.6em;
+    border-radius: 4px;
+  }
+}

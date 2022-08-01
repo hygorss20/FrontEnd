@@ -1,0 +1,90 @@
+<div class="terms-row">
+    <mat-vertical-stepper style="width: 100%;" [linear]="true" #stepper (selectionChange)="stepperSelectionChange()">
+        <mat-step label="Terms Of Service">
+            <h1 class="mat-display-2 text-center"> {{data.product.name}} </h1>
+
+            <h3 class="subheading-3">Why you should buy Runescape OSRS account from YanLiliGold?</h3>
+
+            <ul>
+                <li> All accounts are safe and can not be recovered.</li>
+                <li> You will be first and only owner of purchased account. </li>
+                <li> Buying cheap runescape account from YanLiliGold you will receive it within minutes and can start
+                    playing in no time. </li>
+                <li> All accounts are leveled using most efficient and safe methods. </li>
+            </ul>
+
+            <h3 class="subheading-3">IMPORTANT: </h3>
+
+            <ul>
+                <li> Change email address and password immediately after purchase! </li>
+                <li> Do not use any power leveling or other services on this account 1 week after the purchase.</li>
+                <li> After successful transaction contact our live chat support to check your order status.</li>
+                <li> All sales are final and we do not offer refunds after client has received account information.</li>
+            </ul>
+
+            <mat-dialog-actions align="end">
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 0"
+                    (click)="goBack(stepper)">Back</button>
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 2"
+                    (click)="goForward(stepper)">Next</button>
+            </mat-dialog-actions>
+        </mat-step>
+
+        <mat-step label="Enter your details">
+            <div class="row">
+                <mat-form-field class="full-width">
+                    <input #emailControl="ngModel" matInput placeholder="Email" type="email"
+                        [(ngModel)]="email" email required>
+                    <mat-error *ngIf="emailControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="emailControl.hasError('email')">
+                        Email is <strong>invalid</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-dialog-actions align="end">
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 0"
+                    (click)="goBack(stepper)">Back</button>
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 2"
+                    (click)="goForward(stepper)">Next</button>
+            </mat-dialog-actions>
+        </mat-step>
+
+        <mat-step label="Select you payment method">
+            <div class="row">
+                <app-payment-methods-options-firecape (onChange)="onPaymentMethodChange($event)">
+                </app-payment-methods-options-firecape>
+            </div>
+
+            <div class="checkout-row">
+                <span class="price">Total : </span>
+            </div>
+            <div class="checkout-row">
+                <span class="price">{{ totalPrice }}</span>
+            </div>
+
+            <div class="checkout-row">
+                <mat-checkbox #agreeTermsControl="ngModel" [(ngModel)]="unchecked" required (change)="onFieldChange()">
+                    I agree with the terms of service.</mat-checkbox>
+            </div>
+
+            <div class="checkout-row">
+                <app-checkout (onClick)="onCheckout()" [disabled]="!checkValidForm() || isLoadingRequest">
+                </app-checkout>
+                <mat-progress-spinner class="spinner" *ngIf="isLoadingRequest" mode="indeterminate">
+                </mat-progress-spinner>
+            </div>
+
+            <mat-dialog-actions align="end">
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 0"
+                    (click)="goBack(stepper)">Back</button>
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 2"
+                    (click)="goForward(stepper)">Next</button>
+            </mat-dialog-actions>
+        </mat-step>
+
+
+    </mat-vertical-stepper>
+</div>

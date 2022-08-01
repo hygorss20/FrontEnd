@@ -1,0 +1,178 @@
+@import '../../../assets/_scss/colors.scss';
+
+main{
+    display: block !important;
+}
+
+.terms-section,
+.welcome-section,
+.page-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    padding: 2em 20%;
+    margin-top: 3em;
+}
+
+.mat-card{
+    height: 99% !important;
+    width: 99% !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    padding: 0px !important;
+}
+
+.mat-card-header{
+    justify-content: center !important;
+    vertical-align: center !important;
+    padding-top: 1em;
+    border-bottom : 1px solid $dark-color;
+    margin-bottom: 0.5em !important;
+}
+
+.mat-card-header .mat-card-title{
+    font-size: 1.3rem;
+    color: $dark-color;
+}
+
+.lvl{
+    font-size: 1.05rem;
+    color: $dark-color;
+    font-weight: bold;
+    margin-top: 0.4em;
+}
+
+.mat-card-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+
+}
+
+.service-description{
+    font-size: 1.2em;
+}
+
+.service-description-last{
+    font-size: 1.2em;
+    padding-bottom: 4.5em;
+}
+
+.service-description-items{
+    font-size: 1.1em;
+}
+
+.pink-icon{
+    color : $pink-logo; 
+    vertical-align: bottom !important;
+}
+
+.service-description-title{
+    font-size: 1.12em;
+    font-weight: 500;
+    padding-top: 3px;
+}
+.service-description-title-last{
+    font-size: 1.12em;
+    font-weight: 500;
+    padding-top: 3px;
+    display: block !important;
+}
+
+.service-align-row{
+    flex-direction: row;
+    justify-content: start;
+}
+
+.buttons-align-row{
+    align-items: center !important;
+    margin-top: 0.7em !important;
+    padding-top: 1em !important;
+    border-top : 1px solid $dark-color;
+}
+
+.info-icon{
+    color : $dark-color;
+    vertical-align: middle !important;
+    padding-bottom: 2px;
+}
+
+.price-row{
+    padding: 0;
+}
+
+.price{
+    font-size: 1.3rem;
+    color: $dark-color;
+    text-align: end;
+    font-weight: 500;
+}
+
+.more-info-btn{
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    width: 45% !important;
+    margin-left: 5px;
+}
+
+.buy-icon{
+    color : $dark-color;
+    vertical-align: middle !important;
+    padding-bottom: 2px;
+}
+
+.buy-firecape-btn{
+    display: flex;
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    width: 45% !important;
+    margin-right: 5px;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    color :$pink-logo;
+    text-align: center;
+    justify-content: center !important;
+}
+
+.icons{
+    width: 1.4em;
+    height: 1.4em;
+    background: #EFEFEF;
+    padding: 0.4em;
+    margin-right: 0.2em;
+}
+
+.skill-content{
+    width: 100% !important; 
+    display: flex !important; 
+    align-items: center !important;
+}
+
+.skill-text{
+    margin-left: 0.3em;
+}
+
+.mat-card .mat-grid-tile {
+    border: solid 1px #cbcdd1;
+    border-top-right-radius: 0.5em;    
+    border-bottom-right-radius: 0.5em;    
+    justify-items: space-between !important ;
+    align-items: start !important;
+    width: 27% !important;
+    margin: 0.3em;
+}
+
+@media( max-width: 599px){
+
+    .banner{
+        padding-top: 3em;
+        justify-content: flex-start;
+    }
+}

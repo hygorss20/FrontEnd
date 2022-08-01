@@ -1,0 +1,119 @@
+@import "../../../assets/_scss/colors.scss";
+
+.loading-shine {
+  height: 140px;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.gold-form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  flex-direction: column;
+  padding: 2em 20%;
+}
+
+.mat-card {
+  width: 100%;
+  height: 100% !important;
+  max-width: 100% !important;
+  display: block;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2em 0;
+}
+
+.mat-card-header {
+  justify-content: center !important;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 4rem;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-row {
+  padding-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.spinner {
+  margin-left: 1em;
+}
+
+.toggle-row {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.products-list {
+  padding: 0 4em;
+  padding-top: 4em;
+  width: 100%;
+}
+
+.row {
+  padding-top: 1.5em;
+  padding: 2em;
+  display: inline;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.inputs-row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  font-size: 3em;
+}
+
+.inputs-row .mat-form-field {
+  width: 40%;
+}
+
+.quantity-input,
+.total-input {
+  text-align: center;
+}
+
+.type-purchase {
+  border-color: $primary;
+  font-size: 1.3em;
+}
+
+.mat-button-toggle-checked {
+  background-color: $primary;
+  color: #fff;
+}
+
+.user-details-separator {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .inputs-row .mat-form-field {
+    width: auto;
+  }
+
+  .gold-form-section {
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+  }
+
+  .details-row {
+    width: auto !important;
+  }
+}

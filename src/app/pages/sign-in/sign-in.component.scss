@@ -1,0 +1,78 @@
+@import '../../../assets/_scss/colors.scss';
+
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.login-card {
+  max-width: 400px;
+  margin-top: 40px;
+  padding: 3em;
+  width: 50%;
+
+  mat-card-actions {
+    display: flex;
+    flex-direction: column;   
+
+    button {
+      margin: 0;
+      height: 36px;
+    }
+
+
+    .recovery-password-button {
+      margin-top: 15px;
+    }
+
+    .sign-up-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      > * {
+        width: 100%;
+      }
+    }
+
+    .recovery-password-button, .sign-up-container, .sign-up-button {
+      font-weight: 300;
+
+      b {
+        font-weight: 500;
+      }
+    }
+
+    .separator {
+      margin: 26px 0;
+      height: 1px;
+      border-top: .35px solid $gray-font;
+    }
+  }
+}
+
+body{
+  background-color: #212121;
+  background-size: cover;
+}
+
+
+@media(max-width: 768px) {
+  .login-card {
+    margin: 2em;
+    padding: 2em;
+    width: 100%;
+  }
+}

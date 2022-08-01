@@ -1,0 +1,49 @@
+@import '../../../assets/_scss/colors.scss';
+
+.giveaways-page-section {
+  padding: 2em 20%;
+}
+
+
+@media(max-width: 768px) {
+  .giveaways-page-section {
+      padding-left: .8em;
+      padding-right: .8em;
+  }
+}
+
+
+.earned-prizes-btn {
+  display: flex;
+  border-radius: 0.5em;    
+  border : 1px solid $dark-color;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+  color :$pink-logo;
+  text-align: center;
+
+  mat-icon {
+    color: #823285;
+    vertical-align: middle !important;
+    padding-bottom: 2px;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 50px;
+
+  p {
+    text-align: center;
+    color: $dark-font;
+    font-size: 1.25em;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="payment-methods-row">
+    <h1 class="mat-display-1 mb-title">Payment Methods</h1>
+    <div class="buttons-row">
+        <ng-template [ngIf]="options" [ngIfElse]="loading">
+            <button 
+                *ngFor="let method of options"
+                mat-raised-button
+                (click)="onClick(method)"
+                [class.selected]="payment && payment.id == method.id"
+            >
+                <img [src]="method.icon" alt="">
+            </button>
+        </ng-template>
+
+        <ng-template #loading>
+            <div
+                *ngFor="let item of placeholderOptions" 
+                class="loading-shine"
+            ></div>
+        </ng-template>
+    </div>
+</div>

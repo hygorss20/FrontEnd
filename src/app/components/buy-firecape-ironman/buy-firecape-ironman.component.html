@@ -1,0 +1,88 @@
+<div class="terms-row">
+    <mat-vertical-stepper style="width: 100%;" [linear]="true" #stepper (selectionChange)="stepperSelectionChange()">
+        <mat-step label="Terms Of Service">
+            <h1 class="mat-display-2 text-center"> {{title}} </h1>
+
+            <h3 class="subheading-3">Terms of Service</h3>
+
+            <ul>
+                <li> Average delivery time is up to 4-6 hours. (can take up to 24 hours in extremely rare cases).
+                    Delivery time
+                    depends on your skills and waiting queue.</li>
+                <li> When your order is done you will receive confirmation email to your specified email address. </li>
+                <li> Everything is done by hand, we do not use any 3rd party software, we are not responsible for any
+                    ban that
+                    may occur while the service is being completed. </li>
+                <li> Do not leave any valuables on the account that will not be needed during the service </li>
+                <li> We are not responsible for any items lost on the account </li>
+            </ul>
+
+            <h3 class="subheading-3">REQUIREMENTS FOR FIRE CAPE IRONMAN SERVICE:</h3>
+
+            <ul>
+                <li> Make sure your account meets minimum requirements for the service.</li>
+                <li> ITEMS NEEDED : Coif or better; Black dragonhide set>void set; Snakesing boots;</li>
+
+                    <span class="items_needed">Rune crossbow; +4000 broad bolts; God book; 4 pineapple pizzas; 100 sweets;</span>
+                    <span class="items_needed">23 prayer potion (4); Amulet of glory; Avas > cloak or any cape.</span>
+                <li> Account authenticator must be disabled to prevent your account from being locked.</li>
+                <li> For maximum safety please set up temporary password. You can change it to original after order is
+                    completed.</li>
+            </ul>
+
+            <h3 class="subheading-3">IMPORTANT : Do not login to your account while your order is being processed. Your
+                account
+                can be automatically locked which will prevent your order being completed in a timely manner.</h3>
+
+                <mat-dialog-actions align="end">
+                    <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 0" (click)="goBack(stepper)">Back</button>
+                    <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 2" (click)="goForward(stepper)">Next</button>
+                </mat-dialog-actions>
+        </mat-step>
+
+        <mat-step label="Enter your details">
+            <div class="row">
+                <app-firecape-user-details (onChange)="onChangeDetails($event)" (isValid)="onDetailsChange($event)">
+                </app-firecape-user-details>
+            </div>
+
+            <mat-dialog-actions align="end">
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 0" (click)="goBack(stepper)">Back</button>
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 2" (click)="goForward(stepper)">Next</button>
+            </mat-dialog-actions>
+        </mat-step>
+
+        <mat-step label="Select you payment method">
+            <div class="row">
+                <app-payment-methods-options-firecape (onChange)="onPaymentMethodChange($event)">
+                </app-payment-methods-options-firecape>
+            </div>
+
+            <div class="checkout-row">
+                <span class="price">Total : </span>
+            </div>
+            <div class="checkout-row">
+                <span class="price">{{ totalPrice }}</span>
+            </div>
+
+            <div class="checkout-row">
+                <mat-checkbox #agreeTermsControl="ngModel" [(ngModel)]="unchecked" required (change)="onFieldChange()">
+                    I confirm that the account is prepared and meet all requirements for service.</mat-checkbox>
+            </div>
+
+            <div class="checkout-row">
+                <app-checkout (onClick)="onCheckout()" [disabled]="!checkValidForm() || isLoadingRequest">
+                </app-checkout>
+                <mat-progress-spinner class="spinner" *ngIf="isLoadingRequest" mode="indeterminate">
+                </mat-progress-spinner>
+            </div>
+
+            <mat-dialog-actions align="end">
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 0" (click)="goBack(stepper)">Back</button>
+                <button mat-button class="close-dialog-btn" [disabled]="stepper.selectedIndex === 2" (click)="goForward(stepper)">Next</button>
+            </mat-dialog-actions>
+        </mat-step>
+
+
+    </mat-vertical-stepper>
+</div>

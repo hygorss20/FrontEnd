@@ -1,0 +1,19 @@
+.container-details{
+    padding: 2em 4em;
+}
+
+.full-width {
+    width: 100% !important;
+    font-size: 1.1em;
+}
+
+.text-title{
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+@media(max-width: 768px){
+    .container-details{
+        padding: 1em 1.2em;
+    }
+}

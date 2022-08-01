@@ -1,0 +1,10 @@
+<div class="list">
+  <div class="product-card" *ngFor="let product of products">
+    <a [routerLink]="product.route" matRipple>
+      <div class="overlay">
+        <span>{{product.name}}</span>
+      </div>
+      <img [src]="product.image" [alt]="product.name">
+    </a>
+  </div>
+</div>

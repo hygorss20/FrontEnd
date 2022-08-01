@@ -1,0 +1,24 @@
+import { Injectable } from "@angular/core";
+import { MatDialog, MatDialogRef } from "@angular/material";
+import { GiveawayPrize } from "../../giveaway-prize.model";
+import { SpinWheelCongratsDialogComponent } from "./spin-wheel-congrats-dialog.component";
+
+@Injectable({
+  providedIn: "root",
+})
+export class SpinWheelCongratsDialogService {
+  constructor(private dialog: MatDialog) {}
+
+  openDialog(
+    prize: GiveawayPrize
+  ): MatDialogRef<SpinWheelCongratsDialogComponent> {
+    return this.dialog.open(SpinWheelCongratsDialogComponent, {
+      closeOnNavigation: true,
+      hasBackdrop: true,
+      width: "500px",
+      data: {
+        prize,
+      },
+    });
+  }
+}

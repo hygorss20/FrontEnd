@@ -1,0 +1,142 @@
+@import "../../../assets/_scss/colors.scss";
+
+.payment-methods {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $light-pink-logo;
+  padding: 0.5em;
+  flex-wrap: wrap;
+  margin-top: 5em;
+}
+
+.payment-method img {
+  max-height: 30px;
+  margin: 0.5em;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary !important;
+  overflow: hidden;
+  padding-bottom: 0.2em;
+  padding-top: 36px;
+
+  .yanlili-logo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 40px;
+
+    app-logo img {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: $secondary;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.links-row {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: 100%;
+
+  .link-section {
+    margin-right: 40px;
+  }
+
+  .link-section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+
+    h3 {
+      padding: 0 16px;
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    .mat-button {
+      font-weight: 400;
+      width: 100%;
+      text-align: start;
+    }
+
+    &.reviews {
+      a:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+
+        .mat-button-wrapper {
+          width: 100%;
+        }
+
+        img {
+          width: 150px;
+          height: 45px;
+        }
+      }
+    }
+  }
+}
+
+.copyrights-row {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 8px;
+
+  a {
+    padding: 0;
+  }
+}
+
+@media (max-width: 959px) {
+  .links-row {
+    flex-direction: column;
+
+    .yanlili-logo {
+      padding: 0;
+      padding-bottom: 40px;
+      padding-top: 10px;
+
+      width: auto;
+      align-self: center;
+    }
+
+    .link-section {
+      margin-top: 10px;
+      margin-bottom: 40px;
+
+      h3 {
+        margin: 7px 0;
+      }
+
+      .mat-button {
+        padding: 8px 16px;
+      }
+    }
+  }
+}

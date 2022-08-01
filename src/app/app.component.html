@@ -1,0 +1,9 @@
+<header>
+  <app-main-nav></app-main-nav>
+</header>
+<main [@horizontalSlideAnimation]="getHorizontalState(outlet)">
+  <router-outlet (activate)="onActivate()" #outlet="outlet"></router-outlet>
+</main>
+<footer>
+  <app-footer></app-footer>
+</footer>

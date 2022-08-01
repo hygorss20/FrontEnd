@@ -1,0 +1,24 @@
+@import '../../../assets/_scss/colors.scss';
+
+main{
+    display: block !important;
+}
+
+.terms-section,
+.welcome-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    padding: 2em 20%;
+    margin-top: 3em;
+}
+
+@media( max-width: 599px){
+
+    .banner{
+        padding-top: 3em;
+        justify-content: flex-start;
+    }
+}

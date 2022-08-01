@@ -1,0 +1,145 @@
+@import '../../../assets/_scss/colors.scss';
+
+main{
+    display: block !important;
+}
+
+.terms-section,
+.welcome-section,
+.page-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    padding: 2em 20%;
+    margin-top: 3em;
+}
+
+.mat-card{
+    height: 99% !important;
+    width: 99% !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    padding: 0px !important;
+}
+
+.mat-card-header{
+    justify-content: center !important;
+    vertical-align: center !important;
+    padding-top: 1em;
+    border-bottom : 1px solid $dark-color;
+}
+
+.mat-card-header .mat-card-title{
+    font-size: 1.3rem;
+    color: $dark-color;
+}
+
+.mat-card-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.service-description{
+    font-size: 1.2em;
+}
+
+.service-description-last{
+    font-size: 1.2em;
+    padding-bottom: 4.5em;
+}
+
+.service-description-items{
+    font-size: 1.1em;
+}
+
+.pink-icon{
+    color : $pink-logo; 
+    vertical-align: bottom !important;
+}
+
+.service-description-title{
+    font-size: 1.12em;
+    font-weight: 500;
+    padding-top: 3px;
+}
+.service-description-title-last{
+    font-size: 1.12em;
+    font-weight: 500;
+    padding-top: 3px;
+    display: block !important;
+}
+
+.service-align-row{
+    flex-direction: row;
+    justify-content: start;
+}
+
+.buttons-align-row{
+    align-items: center !important;
+}
+
+.info-icon{
+    color : $dark-color;
+    vertical-align: middle !important;
+    padding-bottom: 2px;
+}
+
+.price-row{
+    padding: 0;
+}
+
+.price{
+    font-size: 1.3rem;
+    color: $dark-color;
+    text-align: end;
+    font-weight: 500;
+}
+
+.more-info-btn{
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    width: 45% !important;
+    margin-left: 5px;
+}
+
+.buy-icon{
+    color : $dark-color;
+    vertical-align: middle !important;
+    padding-bottom: 2px;
+}
+
+.buy-firecape-btn{
+    display: flex;
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    width: 45% !important;
+    margin-right: 5px;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    color :$pink-logo;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.firecapePNG{
+    width: 37%;
+    height: 14em;
+    padding-top: 1em;
+}
+
+
+
+@media( max-width: 599px){
+
+    .banner{
+        padding-top: 3em;
+        justify-content: flex-start;
+    }
+}

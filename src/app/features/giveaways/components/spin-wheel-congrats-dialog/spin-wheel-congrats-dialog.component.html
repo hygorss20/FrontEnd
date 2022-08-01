@@ -1,0 +1,34 @@
+
+<mat-dialog-content class="mat-typography">
+  <div class="row">
+    
+    <ng-template [ngIf]="data.prize.hasValue" [ngIfElse]="sorry">
+      <h1 class="mat-h1">Congrats</h1>
+      <h4 class="mat-h4">
+        You earned this prize: {{ data.prize.name }}. <br>
+        Contact the YanLiliGold discord to get it.
+      </h4>
+
+
+      <ul>
+        <li>Discord server: 
+          <a href="https://discord.gg/RdzKBX9" target="_blank">https://discord.gg/RdzKBX9</a>
+        </li>
+        <li>#1: Discord: YanLiLi#7144  UID:262419757859340289</li>
+        <li>#2: Discord: yanlili123#5068  UID:498771182368325632</li>
+      </ul>
+    </ng-template>
+    
+    <ng-template #sorry>
+      <h1 class="mat-h1">Sorry</h1>
+      <h4 class="mat-h4">
+        The roulette stopped in: {{ data.prize.name }}. <br>
+        Good luck in next time!
+      </h4>
+    </ng-template>
+
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

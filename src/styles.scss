@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/theming";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "assets/_scss/scrollbar";
+@import "assets/_scss/colors";
+@import "./styles/shimmer.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", "Roboto", "Helvetica Neue", sans-serif;
+  background: #fafafa;
+  color: $dark-font;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  padding-top: 64px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.success-message {
+  background: $success-color !important;
+  color: white;
+}
+
+.error-message {
+  background: $error-color !important;
+  color: white;
+}
+
+.warning-message {
+  background: $error-color !important;
+  color: white;
+}
+
+.mat-dialog-actions {
+  .mat-button {
+    border-radius: 0.5em;
+    border: 1px solid $dark-color;
+    font-size: 0.9rem;
+    color: $dark-color;
+    text-align: center;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3em;
+  margin-top: 50px;
+
+  .text {
+    h3 {
+      font-weight: 500;
+      font-size: 2em;
+      line-height: 1.2em;
+      margin: 0;
+      color: $dark-color;
+    }
+
+    h3::after {
+      content: "";
+      display: flex;
+      width: min(100%, 70px);
+      height: 100%;
+      border-bottom: 5px solid $pink-logo;
+      border-radius: 14px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: $dark-color;
+    }
+
+    .link-list p {
+      margin: 6px 0;
+    }
+  }
+
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+
+  &.reverse {
+    .image {
+      order: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    .image {
+      order: 2;
+    }
+  }
+}

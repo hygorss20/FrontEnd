@@ -1,0 +1,7 @@
+export enum ProductType {
+  ACCOUNT = "ACCOUNT",
+  SILVER = "SILVER",
+  GOLD = "GOLD",
+  FIRECAPE_TIER = "FIRECAPE_TIER",
+  NEW_WORLD_GOLD = "NEW_WORLD_GOLD",
+}

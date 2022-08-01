@@ -1,0 +1,18 @@
+
+<div class="roulette-container" [ngClass]="rouletteContainerClass">
+  <canvas 
+    #rouletteCanvas 
+    id="canvas" 
+    width="475" 
+    height="475"
+    [ngStyle]="rouletteCanvasStyle"
+    [ngClass]="rouletteCanvasClass"
+  ></canvas>
+  <div class="center-1">
+    <div class="arrow-up"></div>
+    <div class="center-2" (click)="spinWheelClick()">
+      GOOD <br>
+      LUCK
+    </div>
+  </div>
+</div>

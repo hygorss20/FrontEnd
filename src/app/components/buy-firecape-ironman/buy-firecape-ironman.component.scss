@@ -1,0 +1,58 @@
+@import '../../../assets/_scss/colors.scss';
+
+.text-center{
+    text-align: center;
+}
+.subheading-3{
+    font-weight: bold;
+}
+.buy-icon{
+    color : $dark-color;
+    vertical-align: middle !important;
+    padding-bottom: 2px;
+}
+.items_needed{
+    display: block !important;
+    margin-left: 9.8%;
+}
+
+.close-dialog-btn{
+    display: flex;
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    width: 6% !important;
+    margin-right: 5px;
+    font-size: 0.9rem;
+    color :$dark-color;
+    justify-content: center !important
+}
+.buy-firecape-btn{
+    display: flex;
+    border-radius: 0.5em;    
+    border : 1px solid $dark-color;
+    width: 10% !important;
+    margin-right: 5px;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    color :$pink-logo;
+    text-align: center;
+}
+.checkout-row{
+    padding-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+::ng-deep .mat-checkbox-layout {
+    white-space: normal !important;
+}
+
+// rather than center the checkbox, put the checkbox in the first line
+::ng-deep .mat-checkbox-inner-container {
+    margin-top: 3px !important;
+}
+.price{
+    font-size: 2em;
+    font-weight: bold;
+
+}

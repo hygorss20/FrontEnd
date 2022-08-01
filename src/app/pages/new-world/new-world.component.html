@@ -1,0 +1,25 @@
+<div class="page-content">
+  <app-page-title [title]="title"></app-page-title>
+  <app-page-description>
+    <section>
+      <div class="text">
+        <p>
+          In New World, your gold can  fill up all your ingame needs. Stop losing time farming, enjoy New Worlds full ride by playing it without worrying about gold.
+        </p>
+        <p>
+          With gold, you'll be able to buy yours armours, supplies & tools to make the game even more enjoyable.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/pictures/new-world-01.jpg" alt="New World">
+      </div>
+    </section>
+  </app-page-description>
+
+  <app-gold-form
+    userGameNameLabel="Game name"
+    goldUnit="K"
+    [products]="products"
+    productVariantPlaceholderText="Select server and region"
+  ></app-gold-form>
+</div>

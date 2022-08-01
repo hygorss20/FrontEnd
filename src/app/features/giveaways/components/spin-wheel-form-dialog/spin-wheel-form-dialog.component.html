@@ -1,0 +1,69 @@
+<form>
+  <mat-dialog-content class="mat-typography">
+    <div class="row">
+      <h4 class="first-message mat-h4">Enter your discord number to Spin the Wheel</h4>      
+      <span class="advice">IMPORTANT</span>
+
+      <ul class="advice-list">
+        <li>
+          Before Spin the Wheel, you must be a member of YanLili discord server: 
+          <a href="https://discord.gg/RdzKBX9" target="_blank">https://discord.gg/RdzKBX9</a>
+        </li>
+        <li>
+          Validity period: One month 
+        </li>
+        <li>
+          Minimum charge: 10$ each time
+        </li>
+        <li>
+          If you have any questions about this coupon, please contact Yanliligold discord or 
+          livechat customer service, the final interpretation right belongs to 
+          <a href="https://yanliligold.com" target="_blank">Yanliligold.com</a>
+        </li>
+
+        <li class="discord-contacts-list-item">
+          Discord contacts: 
+          <ul>
+            <li>#1: Discord: YanLiLi#7144  UID:262419757859340289</li>
+            <li>#2: Discord: yanlili123#5068  UID:498771182368325632</li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <mat-form-field class="full-width">
+          <mat-label>Your discord number</mat-label>
+          <input  [formControl]="discordNumberControl" 
+                  matInput 
+                  placeholder="Abcde#1234"
+                  required
+          >
+          <mat-error *ngIf="discordNumberControl.hasError('required')">
+              Your discord number is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="discordNumberControl.hasError('pattern')">
+              Your discord number is <strong>invalid</strong>. Must be like <strong>Abcde#1234</strong>
+          </mat-error>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    
+    <button 
+      *ngIf="!loading"
+      mat-button 
+      (click)="confirm()" 
+      [disabled]="!discordNumberControl.valid"
+    >
+      Confirm
+    </button>
+
+    <button 
+      *ngIf="loading"
+      mat-button
+      disabled
+    >
+      Loading...
+    </button>
+  </mat-dialog-actions>
+</form>

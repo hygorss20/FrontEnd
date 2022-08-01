@@ -1,0 +1,17 @@
+@import '../../../../assets/_scss/colors.scss';
+
+.add-to-cart-btn{
+    font-size: 2.5em;
+    padding: 1em;
+    background-color: $primary;
+    color: $light-font;
+    max-width: 100%;
+    white-space: pre-line;
+}
+
+.cart-icon{
+    font-size: 1em;
+    height: auto;
+    width: auto;
+    line-height: unset;
+}

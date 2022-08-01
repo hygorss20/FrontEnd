@@ -1,0 +1,27 @@
+<div class="container-details">
+    <h2 class="mat-display-1 text-title">Details</h2>
+
+    <mat-form-field class="full-width">
+        <input #rsnControl="ngModel" matInput [placeholder]="userGameNameLabel" type="text" [(ngModel)]="rsn" required
+            (change)="onFieldChange()">
+        <mat-error *ngIf="rsnControl.hasError('required')">
+            {{ userGameNameLabel }} is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input #emailControl="ngModel" matInput placeholder="Email" type="email" [(ngModel)]="email" email required
+            (change)="onFieldChange()">
+        <mat-error *ngIf="emailControl.hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="emailControl.hasError('email')">
+            Email is <strong>invalid</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input #noteControl="ngModel" matInput placeholder="Note" type="text" [(ngModel)]="note"
+            (change)="onFieldChange()">
+    </mat-form-field>
+</div>

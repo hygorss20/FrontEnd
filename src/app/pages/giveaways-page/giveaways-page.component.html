@@ -1,0 +1,39 @@
+<div class="page-content">
+  <app-page-title title="Spin the wheel of goodness & win Osrs gold"></app-page-title>
+
+  <section class="giveaways-page-section">
+    <div class="user-info">
+      <ng-template [ngIf]="!!user">
+        <p>Hi, {{ user.name || user.email }}</p>
+
+        <button
+          mat-stroked-button
+          (click)="logout()"
+          color="primary"
+        >
+          Is not you? Logout
+        </button>
+      </ng-template>
+      
+      <ng-template [ngIf]="!user && !!activeRound">
+        <p>
+          Hi! Before Spin the Wheel you must be Logged In.
+        </p>
+
+        <button
+          mat-raised-button
+          color="primary"
+          routerLink="/sign-in"
+        >
+          Login
+        </button>
+      </ng-template>
+    </div>
+
+
+    <app-giveaway-round 
+      (refresh)="refreshRound()"
+      [activeRound]="activeRound"
+    ></app-giveaway-round>
+  </section>
+</div>

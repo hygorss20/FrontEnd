@@ -1,0 +1,30 @@
+.loading-shine {
+  background: #edeef1;
+  background-image: linear-gradient(
+    to right,
+    #edeef1 0%,
+    #f6f7f8 20%,
+    #edeef1 40%,
+    #edeef1 100%
+  );
+  background-repeat: no-repeat;
+  // background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}

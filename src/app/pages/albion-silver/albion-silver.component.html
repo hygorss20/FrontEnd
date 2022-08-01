@@ -1,0 +1,26 @@
+<div class="page-content">
+    <app-page-title [title]="product.name"></app-page-title>
+    <app-page-description>
+        <section>
+            <div class="text">
+                <p>
+                    Albion Online is an attractive upcoming MMORPG being developed by Sandbox Interactive.
+                    Sandbox Interactive is a company based in Berlin, Germany.
+                    The game is a 3D sandbox MMORPG with player freedom being at the center of the game
+                </p>
+                <p>
+                    Albion players will need lots of Albion Online Silver and Gamers will be able to use Albion Online Silver to buy land, build a house, gather resources, craft items which they can use or sell, and engage in Guild vs Guild or open world PVP.
+                </p>
+            </div>
+            <div class="image">
+                <img src="assets/pictures/albion-01.jpeg" alt="Albion Silver">
+            </div>
+        </section>
+    </app-page-description>
+
+    <app-gold-form 
+        userGameNameLabel="Game name"
+        productTypeLabel="Silver"
+        [products]="[product]"
+    ></app-gold-form>
+</div>

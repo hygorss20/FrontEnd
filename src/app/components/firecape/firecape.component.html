@@ -1,0 +1,585 @@
+<div style="display: flex; flex-direction: column;">
+    <section class="welcome-section">
+
+        <h1 class="mat-display-2">OSRS Fire Cape Service</h1>
+
+        <mat-grid-list style="width: 150%" [cols]="gridList.cols" [rowHeight]="gridList.rowHeight" gutterSize="20px">
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 1
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    70+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    40+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        Ava's attractor OR Ava's accumulator
+                                    </span>
+                                </div>
+
+                                <span class="service-description-title">
+                                    No bank PIN or supplies needed!
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecape(firecapeProducts[0])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[0].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 2
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    70+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    1+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        Ava's attractor OR Ava's accumulator
+                                    </span>
+                                </div>
+
+                                <span class="service-description-title">
+                                    No bank PIN or supplies needed!
+                                </span>
+
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecape(firecapeProducts[1])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[1].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 3
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    60+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    40+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        Ava's attractor OR Ava's accumulator
+                                    </span>
+                                </div>
+
+                                <span class="service-description-title">
+                                    No bank PIN or supplies needed!
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecape(firecapeProducts[2])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[2].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 4
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    60+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    1+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        Ava's attractor OR Ava's accumulator
+                                    </span>
+                                </div>
+
+                                <span class="service-description-title">
+                                    No bank PIN or supplies needed!
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecape(firecapeProducts[3])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[3].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 5
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    40+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        Ava's attractor OR Ava's accumulator
+                                    </span>
+                                </div>
+
+                                <span class="service-description-title">
+                                    No bank PIN or supplies needed!
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecape(firecapeProducts[4])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[4].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 6
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    1+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        Ava's attractor OR Ava's accumulator
+                                    </span>
+                                </div>
+
+                                <span class="service-description-title">
+                                    No bank PIN or supplies needed!
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecape(firecapeProducts[5])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[5].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 1 IRONMAN
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    70+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    40+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description-last">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecapeIronMan(firecapeProducts[6])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[6].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Tier 2 IRONMAN
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    60+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    40+ Defence
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description-last">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecapeIronMan(firecapeProducts[7])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[7].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            Jad Kill (Wave 62 and Jad)
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="service-align-row">
+
+                        <img src="assets/firecape.png" class="firecapePNG">
+
+                        <mat-card-content>
+                            <mat-card-content>
+                                <span class="service-description-title">
+                                    Required skills:
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ Ranged
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    50+ HP
+                                </span>
+
+                                <span class="service-description">
+                                    <mat-icon class="pink-icon">check</mat-icon>
+                                    43+ Prayer
+                                </span>
+
+                                <div class="service-align-row">
+                                    <span class="service-description-title">
+                                        Items:
+                                    </span>
+
+                                    <span class="service-description-items">
+                                        4 Super restore potions(4); 1 Saradomin brew(4)
+                                    </span>
+
+                                    <span class="service-description-title-last">
+                                        No bank PIN or supplies needed!
+                                    </span>
+                                </div>
+                            </mat-card-content>
+                        </mat-card-content>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button"
+                            (click)="buyFirecapeJadKill(firecapeProducts[8])">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{currentCurrency.symbol}} {{updatePrice(firecapeProducts[8].sellPrice)}}
+                        </button>
+                    </mat-card-content>
+
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </section>
+
+    <!-- <section class="terms-section">
+        <app-terms-of-services></app-terms-of-services>
+    </section> -->
+
+</div>

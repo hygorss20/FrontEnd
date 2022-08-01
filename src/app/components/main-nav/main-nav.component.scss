@@ -1,0 +1,75 @@
+@import "../../../assets/_scss/colors.scss";
+
+.main-nav-toolbar {
+  background-color: $primary !important;
+  position: fixed !important;
+  z-index: 1000;
+  width: 100%;
+  opacity: 1;
+}
+
+.mobile-menu-bar {
+  display: flex !important;
+  justify-content: flex-start;
+  height: 56px;
+
+  app-logo {
+    height: 65%;
+    margin-left: 10px;
+  }
+
+  .spacer {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.main-nav-link {
+  color: $light-font;
+  font-size: 0.8em;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-nav-toolbar .mat-form-field-appearance-legacy .mat-form-field-underline {
+  color: white;
+}
+
+.main-menu-bar-row {
+  app-currency-menu {
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 959px) {
+  .main-nav-toolbar {
+    padding-right: 3em !important;
+  }
+
+  .mobile-menu-bar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .main-nav-toolbar {
+    min-height: 56px;
+  }
+
+  .main-menu-bar-row {
+    height: auto !important;
+    flex-direction: column !important;
+    padding-bottom: 10px;
+
+    app-logo,
+    app-currency-menu {
+      display: none;
+    }
+
+    > button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+
+<mat-form-field style="max-width: 6em;">
+  <mat-select class="main-nav-link" [(value)]="currentCurrency" (selectionChange)="onCurrencyChange()">
+      <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+          {{currency.label}}
+      </mat-option>
+  </mat-select>
+</mat-form-field>

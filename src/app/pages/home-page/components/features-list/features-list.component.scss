@@ -1,0 +1,47 @@
+@import "../../../../../assets/_scss/colors.scss";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-card {
+  cursor: pointer;
+  transition: ease-in 150ms;
+  height: 180px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  margin: 1em;
+  border-radius: 6px;
+  background-color: rgba($light-pink-logo, 0.05);
+}
+
+.mat-card:hover {
+  transform: scale(1.06);
+}
+
+.mat-card-header {
+  justify-content: center !important;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 2.5rem;
+  color: $dark-color;
+  margin: 0;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.service-description {
+  font-size: 1.2em;
+  text-align: center;
+}

@@ -1,0 +1,86 @@
+<section class="gold-form-section">
+    <mat-card>
+        <mat-card-content>
+
+            <mat-horizontal-stepper style="width: 100%;" [linear]="true" #stepper (selectionChange)="stepperSelectionChange()">
+                <mat-step label="Enter a mode and quantity">
+                    <div class="toggle-row">
+                        <mat-button-toggle-group #selectedMode="matButtonToggleGroup" class="type-purchase" name="type"
+                            aria-label="Purchase type" (change)="updatePrice()">
+                            <mat-button-toggle checked value="buy">Buy {{ productTypeLabel }}</mat-button-toggle>
+                            <mat-button-toggle value="sell">Sell {{ productTypeLabel }}</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+
+                    <!-- <mat-form-field class="products-list" *ngIf="products && products.length > 1">
+                        <mat-select [(value)]="product" (selectionChange)="onProductVariantChange()">
+                            <mat-option *ngFor="let product of products" [value]="product">
+                                {{product.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+                    <mat-form-field class="products-list" *ngIf="products && products.length > 1">
+                        <input type="text"
+                            [placeholder]="productVariantPlaceholderText"
+                            matInput
+                            [formControl]="productVariantControl"
+                            [matAutocomplete]="productVarianteAutoComplete">
+                        <mat-autocomplete autoActiveFirstOption #productVarianteAutoComplete="matAutocomplete" [displayWith]="displayProductVariant">
+                            <mat-option *ngFor="let product of filteredProducts | async" [value]="product">
+                                {{product.name}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+                    <div *ngIf="!products">
+                        <div class="loading-shine"></div>
+                    </div>
+                    
+                    <div class="row" *ngIf="product" >
+                        <div class="full-width inputs-row">
+                            <mat-form-field>
+                                <input #quantityControlModel="ngModel" numberFormat [label]="goldUnit" class="quantity-input" type="text" matInput
+                                    placeholder="Quantity" [(ngModel)]="quantityLabel" (input)="onQuantityChange()">
+                                <mat-error *ngIf="quantityControlModel.hasError('quantity')">
+                                    {{ invalidQuantityMessage }}
+                                </mat-error>
+
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input numberFormat useCurrency="true" [currency]="currentCurrency" class="total-input"
+                                    type="text" [(ngModel)]="priceLabel" (input)="onPriceChange()" matInput
+                                    placeholder="Total">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-step>
+
+                <mat-step label="Payment method & Your Details" *ngIf="product" [completed]="!!this.payment" >
+                    <div class="row">
+                        <app-payment-methods-options
+                            (onChange)="onPaymentMethodChange($event)"
+                            [payment]="payment"
+                            [product]="product"
+                            [isBuyingMode]="isBuyingMode()"
+                        >
+                        </app-payment-methods-options>
+                    </div>
+
+                    <div class="user-details-separator"></div>
+                    <div class="row">
+                        <app-user-details [userGameNameLabel]="userGameNameLabel" (onChange)="onChangeDetails($event)" (isValid)="onDetailsChange($event)"></app-user-details>
+                    </div>
+                </mat-step>
+
+            </mat-horizontal-stepper>
+
+            <div class="checkout-row">
+                <app-next-step *ngIf="stepper && stepper.selectedIndex == 0" (onClick)="stepper.next()" [disabled]="!canGoToCheckout()"></app-next-step>
+                <app-checkout *ngIf="stepper && stepper.selectedIndex == 1" (onClick)="onCheckout()" [disabled]="!canCheckout() || isLoadingRequest"></app-checkout>
+                <mat-progress-spinner class="spinner" *ngIf="isLoadingRequest" mode="indeterminate"></mat-progress-spinner>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</section>

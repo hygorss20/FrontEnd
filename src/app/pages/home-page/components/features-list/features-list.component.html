@@ -1,0 +1,17 @@
+<div class="list">
+  <mat-card *ngFor="let feature of features">
+    <mat-card-header>
+        <mat-card-title>
+            <i  
+              class="fas"
+              [ngClass]="[feature.icon]"
+            ></i>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <span class="service-description">
+            {{ feature.description }}
+        </span>
+    </mat-card-content>
+  </mat-card>
+</div>

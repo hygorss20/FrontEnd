@@ -1,0 +1,36 @@
+<mat-toolbar class="main-nav-toolbar">
+    <mat-toolbar-row class="mobile-menu-bar">
+        <button class="main-nav-link" mat-icon-button (click)="isMenuHidden = !isMenuHidden">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <app-logo></app-logo>
+        <div class="spacer"></div>
+        <app-currency-menu></app-currency-menu>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row *ngIf="!isMenuHidden" class="main-menu-bar-row">
+        <app-logo></app-logo>
+        <span class="spacer"></span>
+
+        <ng-template ngFor [ngForOf]="menus" let-menu>
+            <a 
+                *ngIf="menu.route"
+                class="main-nav-link"
+                mat-button (click)="onClickMenuItem(menu)"
+                [routerLink]="menu.route"
+            >
+                {{menu.label}}
+            </a>
+            <a 
+                *ngIf="!menu.route"
+                class="main-nav-link"
+                mat-button (click)="onClickMenuItem(menu)"
+            >
+                {{menu.label}}
+            </a>
+        </ng-template>
+
+        <app-currency-menu></app-currency-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,186 @@
+<div style="display: flex; flex-direction: column;">
+    <section class="welcome-section">
+
+        <h1 class="mat-display-2">OSRS Accounts</h1>
+
+        <mat-form-field style="width: 125%;">
+            <input #noteControl="ngModel" matInput placeholder="Search for your desired skill" type="text"
+                [(ngModel)]="search" (input)="FilterAccounts()">
+        </mat-form-field>
+
+        <mat-grid-list style=" width: 125%" [cols]="gridList.cols" [rowHeight]="gridList.rowHeight" gutterSize="20px">
+
+            <mat-grid-tile *ngFor="let account of allAcountsFilter" colspan="1" rowspan="1">
+                <mat-card>
+
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{account.name}}
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-grid-list cols="3" rowHeight="3:1" [gutterSize]="'0.3em'">
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/attack_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.attack.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/hitpoints_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.hitpoints.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/mining_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.mining.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/strength_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.strength.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/agility_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.agility.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/smithing_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.smithing.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/defence_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.defence.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/herblore_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.herblore.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/fishing_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.fishing.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/ranged_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.ranged.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/thieving_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.thieving.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/cooking_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.cooking.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/prayer_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.prayer.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/crafting_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.crafting.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/firemaking_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.firemaking.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/magic_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.magic.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/fletching_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.fletching.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/woodcutting_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.woodcutting.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/runecrafting_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.runecraft.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/slayer_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.slayer.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/farming_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.farming.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/construction_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.construction.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div class="skill-content">
+                                <img src="assets/skills/hunter_icon.png" class="icons">
+                                <span class="skill-text">{{account.skills.hunter.value}}</span>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+
+                    <mat-card-content>
+                        <ul>
+                            <li class="lvl"> Combat Level : {{account.skills.combatLevel.toFixed(0)}}</li>
+                            <li class="lvl"> Total Level : {{account.skills.totalLevel}}</li>
+                        </ul>
+                    </mat-card-content>
+
+                    <mat-card-content class="buttons-align-row">
+                        <button mat-flat-button class="buy-firecape-btn" type="button" (click)="buyAccount(account)">
+                            <mat-icon class="buy-icon">shopping_cart</mat-icon>
+                            {{updatePrice(account.sellPrice)}}
+                        </button>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </section>
+
+    <!-- <section class="terms-section">
+        <app-terms-of-services></app-terms-of-services>
+    </section> -->
+
+</div>

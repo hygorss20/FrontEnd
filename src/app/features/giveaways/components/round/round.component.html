@@ -1,0 +1,44 @@
+<ng-template [ngIf]="round" [ngIfElse]="empty">
+  <mat-card class="round-card">
+    <mat-card-content>
+      <div class="title">Active giveaway round</div>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListIcon>access_time</mat-icon>
+          <mat-icon matListIcon>arrow_forward</mat-icon>
+          <div matLine class="type">Start time</div>
+          <div matLine class="text">{{ round.startTime | date:'MMM d, y, h:mm a' }}</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListIcon>arrow_back</mat-icon>
+          <mat-icon matListIcon>access_time</mat-icon>
+          <div matLine class="type">End time</div>
+          <div matLine class="text">{{ round.endTime | date:'MMM d, y, h:mm a' }}</div>
+        </mat-list-item>
+
+        <mat-list-item *ngIf="timeLeft">
+          <mat-icon matListIcon></mat-icon>
+          <mat-icon matListIcon>av_timer</mat-icon>
+          <div matLine class="type">Time left</div>
+          <div matLine class="text">
+            {{ timeLeft.hours | number:'2.0-0'}}:{{ timeLeft.minutes | number:'2.0-0'}}:{{ timeLeft.seconds | number:'2.0-0'}}</div>
+        </mat-list-item>
+      </mat-list>
+
+      <app-giveaway-roulette 
+        (refresh)="refreshRound()"
+        [availablePrizes]="round.availablePrizes"
+      ></app-giveaway-roulette>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+
+<ng-template #empty>
+  <div class="no-round">
+    <mat-icon>money_off</mat-icon>
+    <div class="title">No active giveaway round</div>
+    <div class="subtitle">Sorry, there is no active giveaway round. Come back later.</div>
+  </div>
+</ng-template>
+
